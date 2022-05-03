@@ -14,6 +14,7 @@
 		E8A2699128215A710018B8EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8A2699028215A710018B8EA /* Assets.xcassets */; };
 		E8A2699428215A710018B8EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8A2699228215A710018B8EA /* LaunchScreen.storyboard */; };
 		E8A269A228215F050018B8EA /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A269A128215F050018B8EA /* TasksViewController.swift */; };
+		E8A269A42821639E0018B8EA /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A269A32821639E0018B8EA /* AlertController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		E8A2699328215A710018B8EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E8A2699528215A710018B8EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8A269A128215F050018B8EA /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
+		E8A269A32821639E0018B8EA /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 			children = (
 				E8A2698B28215A710018B8EA /* MainViewController.swift */,
 				E8A269A128215F050018B8EA /* TasksViewController.swift */,
+				E8A269A32821639E0018B8EA /* AlertController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8A2698C28215A710018B8EA /* MainViewController.swift in Sources */,
+				E8A269A42821639E0018B8EA /* AlertController.swift in Sources */,
 				E8A269A228215F050018B8EA /* TasksViewController.swift in Sources */,
 				E8A2698828215A710018B8EA /* AppDelegate.swift in Sources */,
 				E8A2698A28215A710018B8EA /* SceneDelegate.swift in Sources */,
