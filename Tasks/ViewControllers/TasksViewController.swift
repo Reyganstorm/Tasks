@@ -33,10 +33,20 @@ class TasksViewController: UITableViewController {
 
         return cell
     }
+    
+    private func addButtonPressed() {
+        showAlert()
+    }
 }
 
 extension TasksViewController {
     private func showAlert() {
-       // let alert = UIAlertController
+        let alert = UIAlertController.createAllert(withTitle: "New Task", andMessage: "What do u want to do?")
+        
+        alert.action { newValue, note in
+            
+        }
+        
+        present(alert, animated: true)
     }
 }
