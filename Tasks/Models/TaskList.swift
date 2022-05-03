@@ -9,9 +9,10 @@ import RealmSwift
 
 // Object - это тип данных фреймворка Realm
 class TaskList: Object {
+    
     @Persisted var name = ""
     @Persisted var date = Date()
-    let tasks = List<Task>()
+    @Persisted var tasks = List<Task>()
 }
 
 class Task: Object {

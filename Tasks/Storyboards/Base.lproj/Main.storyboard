@@ -11,7 +11,6 @@
         <!--Task Lists-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Tasks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -57,8 +56,18 @@
                             <constraint firstItem="khs-H4-XWp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="tdB-0Z-U5v"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Task Lists" largeTitleDisplayMode="never" id="T1b-3a-c4z"/>
+                    <navigationItem key="navigationItem" title="Task Lists" largeTitleDisplayMode="never" id="T1b-3a-c4z">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="jhn-59-ywU">
+                            <connections>
+                                <action selector="addButtonPressed:" destination="BYZ-38-t0r" id="Hc5-Fo-hqp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="FVB-Mt-KWc" id="UYW-Ib-Z3D"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="319" y="98"/>
         </scene>
@@ -85,7 +94,9 @@
                             <outlet property="delegate" destination="Nto-UF-3yh" id="qpy-V8-JKw"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="iy3-pY-GYn"/>
+                    <navigationItem key="navigationItem" id="iy3-pY-GYn">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="s4b-r1-iEd"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H3c-nO-d3b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

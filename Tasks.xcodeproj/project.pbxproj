@@ -16,6 +16,8 @@
 		E8A269A228215F050018B8EA /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A269A128215F050018B8EA /* TasksViewController.swift */; };
 		E8A269A42821639E0018B8EA /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A269A32821639E0018B8EA /* AlertController.swift */; };
 		E8A38322282172A400597C08 /* TaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A38321282172A400597C08 /* TaskList.swift */; };
+		E8A383242821751D00597C08 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A383232821751D00597C08 /* DataManager.swift */; };
+		E8A383262821792D00597C08 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A383252821792D00597C08 /* StorageManager.swift */; };
 		F97AE73C8E7E2E6CFDC108CD /* Pods_Tasks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 466E93647F03DC69312311DA /* Pods_Tasks.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +36,8 @@
 		E8A269A128215F050018B8EA /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		E8A269A32821639E0018B8EA /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		E8A38321282172A400597C08 /* TaskList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskList.swift; sourceTree = "<group>"; };
+		E8A383232821751D00597C08 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		E8A383252821792D00597C08 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +148,8 @@
 		E8A269A628216BF00018B8EA /* Services  */ = {
 			isa = PBXGroup;
 			children = (
+				E8A383232821751D00597C08 /* DataManager.swift */,
+				E8A383252821792D00597C08 /* StorageManager.swift */,
 			);
 			name = "Services ";
 			path = ViewControllers;
@@ -267,9 +273,11 @@
 				E8A38322282172A400597C08 /* TaskList.swift in Sources */,
 				E8A2698C28215A710018B8EA /* MainViewController.swift in Sources */,
 				E8A269A42821639E0018B8EA /* AlertController.swift in Sources */,
+				E8A383242821751D00597C08 /* DataManager.swift in Sources */,
 				E8A269A228215F050018B8EA /* TasksViewController.swift in Sources */,
 				E8A2698828215A710018B8EA /* AppDelegate.swift in Sources */,
 				E8A2698A28215A710018B8EA /* SceneDelegate.swift in Sources */,
+				E8A383262821792D00597C08 /* StorageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

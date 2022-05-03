@@ -8,9 +8,23 @@
 import UIKit
 
 class MainViewController: UIViewController {
-
+    
+    
+    @IBOutlet var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        createTempData()
+    }
+    
+    @IBAction func addButtonPressed(_ sender: Any) {
+        showAlert()
+    }
+    
+    private func createTempData() {
+        DataManager.shared.createTempData {
+            self.tableView.reloadData()
+        }
     }
 }
 
@@ -39,5 +53,17 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+}
+
+extension MainViewController {
+    private func showAlert() {
+        let alert = UIAlertController.createAllert(withTitle: "New Task", andMessage: "What do u want to do?")
+        
+        alert.action { newValue in
+            
+        }
+        
+        present(alert, animated: true)
+    }
 }
 
