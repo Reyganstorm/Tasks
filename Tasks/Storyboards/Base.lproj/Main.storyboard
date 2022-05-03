@@ -26,12 +26,28 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="FVB-Mt-KWc">
                                 <rect key="frame" x="0.0" y="124" width="414" height="738"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="lLE-MS-8Qm">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="8SK-6D-gEA" detailTextLabel="skC-LH-rYc" style="IBUITableViewCellStyleValue1" id="lLE-MS-8Qm">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lLE-MS-8Qm" id="Xke-bg-j4M">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8SK-6D-gEA">
+                                                    <rect key="frame" x="20" y="15" width="25" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="skC-LH-rYc">
+                                                    <rect key="frame" x="361" y="15" width="33" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="Nto-UF-3yh" kind="show" id="dju-sz-xt0"/>
@@ -57,7 +73,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Task Lists" largeTitleDisplayMode="never" id="T1b-3a-c4z">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="jhn-59-ywU">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="jhn-59-ywU">
                             <connections>
                                 <action selector="addButtonPressed:" destination="BYZ-38-t0r" id="Hc5-Fo-hqp"/>
                             </connections>
@@ -94,8 +110,12 @@
                             <outlet property="delegate" destination="Nto-UF-3yh" id="qpy-V8-JKw"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="iy3-pY-GYn">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="s4b-r1-iEd"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="iy3-pY-GYn">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="s4b-r1-iEd">
+                            <connections>
+                                <action selector="addButtonPressed:" destination="Nto-UF-3yh" id="K5i-jv-wdQ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H3c-nO-d3b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
