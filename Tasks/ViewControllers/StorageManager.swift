@@ -29,6 +29,15 @@ class StorageManager {
         }
     }
     
+    // MARK: - Delete
+    
+    func delete(_ taskList: TaskList) {
+        write {
+            localRealm.delete(taskList.tasks)
+            localRealm.delete(taskList)
+        }
+    }
+    
     // MARK: - Tasks
     func save(_ task: Task, to taskList: TaskList ) {
         write {

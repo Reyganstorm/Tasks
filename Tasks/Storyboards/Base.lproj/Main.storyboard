@@ -110,13 +110,7 @@
                             <outlet property="delegate" destination="Nto-UF-3yh" id="qpy-V8-JKw"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="iy3-pY-GYn">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="s4b-r1-iEd">
-                            <connections>
-                                <action selector="addButtonPressed:" destination="Nto-UF-3yh" id="K5i-jv-wdQ"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="iy3-pY-GYn"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H3c-nO-d3b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

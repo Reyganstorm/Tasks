@@ -20,12 +20,15 @@ class TasksViewController: UITableViewController {
         title = taskList.name
         currentTask = taskList.tasks.filter("isCompleted = false")
         completedTask = taskList.tasks.filter("isCompleted = true")
+        
+        let addButton = UIBarButtonItem(
+            barButtonSystemItem: .add,
+            target: self,
+            action: #selector(addButtonPressed)
+        )
+        navigationItem.rightBarButtonItems = [addButton, editButtonItem]
     }
     
-    
-    @IBAction func addButtonPressed(_ sender: Any) {
-        showAlert()
-    }
     
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -52,7 +55,7 @@ class TasksViewController: UITableViewController {
         return cell
     }
     
-    private func addButtonPressed() {
+    @objc private func addButtonPressed() {
         showAlert()
     }
 }
@@ -62,9 +65,16 @@ extension TasksViewController {
         let alert = UIAlertController.createAllert(withTitle: "New Task", andMessage: "What do u want to do?")
         
         alert.action { newValue, note in
-            
+            self.saveTask(withName: newValue, andNote: note )
         }
         
         present(alert, animated: true)
+    }
+    
+    private func saveTask(withName name: String, andNote note: String) {
+        let task = Task(value: [name, note])
+        StorageManager.shared.save(task, to: taskList)
+        let rowIndex = IndexPath(row: currentTask.index(of: task) ?? 0, section: 0)
+        tableView.insertRows(at: [rowIndex], with: .automatic)
     }
 }

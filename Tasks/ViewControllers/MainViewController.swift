@@ -18,6 +18,12 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         createTempData()
         taskLists = StorageManager.shared.localRealm.objects(TaskList.self)
+        navigationItem.leftBarButtonItem = editButtonItem
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
     }
     
     @IBAction func addButtonPressed(_ sender: Any) {
@@ -33,15 +39,7 @@ class MainViewController: UIViewController {
 }
 
 extension MainViewController: UITableViewDataSource, UITableViewDelegate {
-    
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        section == 0 ? "Current Tasks" : "Done"
-//    }
-//
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        2
-//    }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         taskLists.count
     }
@@ -56,6 +54,8 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = tableView.indexPathForSelectedRow else {return}
         guard let tasksVC = segue.destination as? TasksViewController else {return}
@@ -64,8 +64,23 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         
     }
     
+    
+    // MARK:- UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let taskList = taskLists[indexPath.row]
+        
+        let delete = UIContextualAction(
+            style: .destructive,
+            title: "Delete") { _, _, _ in
+                StorageManager.shared.delete(taskList)
+                tableView.deleteRows(at: [indexPath], with: .automatic )
+            }
+        return UISwipeActionsConfiguration(actions: [delete])
     }
     
     
