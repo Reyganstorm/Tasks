@@ -6,6 +6,7 @@
 //
 
 import RealmSwift
+import UIKit
 
 class MainViewController: UIViewController {
     
@@ -80,18 +81,45 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
                 StorageManager.shared.delete(taskList)
                 tableView.deleteRows(at: [indexPath], with: .automatic )
             }
-        return UISwipeActionsConfiguration(actions: [delete])
+        
+        let editAction = UIContextualAction(
+            style: .normal,
+            title: "Edit") { _, _, isDone in
+                self.showAlert(with: taskList) {
+                    tableView.reloadRows(at: [indexPath], with: .automatic)
+                }
+                isDone(true)
+        }
+        
+        let doneAction = UIContextualAction(
+            style: .normal,
+            title: "Done") { _, _, isDone in
+                StorageManager.shared.done(taskList)
+                tableView.reloadRows(at: [indexPath], with: .automatic)
+                isDone(true)
+            }
+        
+        editAction.backgroundColor = #colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1)
+        doneAction.backgroundColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)
+        
+        
+        return UISwipeActionsConfiguration(actions: [doneAction, editAction ,delete])
     }
     
     
 }
 
 extension MainViewController {
-    private func showAlert() {
-        let alert = UIAlertController.createAllert(withTitle: "New Task", andMessage: "What do u want to do?")
+    private func showAlert(with taskList: TaskList? = nil, completion: (() -> Void)? = nil ) {
+        let alert = AlertController.createAllert(withTitle: "New Task", andMessage: "What do u want to do?")
         
-        alert.action { newValue in
-            self.save(newValue)
+        alert.action(with: taskList) { newValue  in
+            if let taskList = taskList, let completion = completion {
+                StorageManager.shared.edit(taskList, newValue: newValue)
+                completion()
+            } else {
+                self.save(newValue)
+            }
         }
         
         present(alert, animated: true)

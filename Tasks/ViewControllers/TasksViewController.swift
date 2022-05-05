@@ -62,7 +62,7 @@ class TasksViewController: UITableViewController {
 
 extension TasksViewController {
     private func showAlert() {
-        let alert = UIAlertController.createAllert(withTitle: "New Task", andMessage: "What do u want to do?")
+        let alert = AlertController.createAllert(withTitle: "New Task", andMessage: "What do u want to do?")
         
         alert.action { newValue, note in
             self.saveTask(withName: newValue, andNote: note )

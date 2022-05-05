@@ -91,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				E8A2699B28215AA70018B8EA /* ViewControllers */,
+				E8C01DB22823E98C00AB2BCB /* Extansion */,
 				E8A269A628216BF00018B8EA /* Services  */,
 				E8A269A528216BCD0018B8EA /* Models */,
 				E8A2699D28215AD10018B8EA /* App */,
@@ -105,7 +106,6 @@
 			children = (
 				E8A2698B28215A710018B8EA /* MainViewController.swift */,
 				E8A269A128215F050018B8EA /* TasksViewController.swift */,
-				E8A269A32821639E0018B8EA /* AlertController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -153,6 +153,14 @@
 			);
 			name = "Services ";
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E8C01DB22823E98C00AB2BCB /* Extansion */ = {
+			isa = PBXGroup;
+			children = (
+				E8A269A32821639E0018B8EA /* AlertController.swift */,
+			);
+			path = Extansion;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

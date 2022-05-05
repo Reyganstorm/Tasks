@@ -29,6 +29,13 @@ class StorageManager {
         }
     }
     
+    // MARK: - Tasks
+    func save(_ task: Task, to taskList: TaskList ) {
+        write {
+            taskList.tasks.append(task)
+        }
+    }
+    
     // MARK: - Delete
     
     func delete(_ taskList: TaskList) {
@@ -38,12 +45,20 @@ class StorageManager {
         }
     }
     
-    // MARK: - Tasks
-    func save(_ task: Task, to taskList: TaskList ) {
+    // MARK: - Edit
+    func edit(_ taskList: TaskList, newValue: String) {
         write {
-            taskList.tasks.append(task)
+            taskList.name = newValue
         }
     }
+    
+    // MARK: - Done
+    func done(_ taskList: TaskList) {
+        write {
+            taskList.tasks.setValue(true, forKey: "isCompleted")
+        }
+    }
+    
     
     private func write(completion: ()-> Void) {
         do {
