@@ -45,6 +45,12 @@ class StorageManager {
         }
     }
     
+    func delete(_ task: Task) {
+        write {
+            localRealm.delete(task)
+        }
+    }
+    
     // MARK: - Edit
     func edit(_ taskList: TaskList, newValue: String) {
         write {
@@ -52,10 +58,23 @@ class StorageManager {
         }
     }
     
+    func edit(_ task: Task, to newName: String, with newNote: String) {
+        write {
+            task.name = newName
+            task.note = newNote
+        }
+    }
+    
     // MARK: - Done
     func done(_ taskList: TaskList) {
         write {
             taskList.tasks.setValue(true, forKey: "isCompleted")
+        }
+    }
+    
+    func done(_ task: Task) {
+        write {
+            task.isCompleted.toggle()
         }
     }
     

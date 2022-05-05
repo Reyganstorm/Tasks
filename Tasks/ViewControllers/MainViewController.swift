@@ -37,6 +37,14 @@ class MainViewController: UIViewController {
         }
     }
     
+    @IBAction func sortingLists(_ sender: UISegmentedControl) {
+        taskLists = sender.selectedSegmentIndex == 0
+        ? taskLists.sorted(byKeyPath: "date", ascending: true)
+        : taskLists.sorted(byKeyPath: "name", ascending: true)
+        tableView.reloadData()
+    }
+    
+    
 }
 
 extension MainViewController: UITableViewDataSource, UITableViewDelegate {
@@ -48,10 +56,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let taskList = taskLists[indexPath.row]
-        var content = cell.defaultContentConfiguration()
-        content.text = taskList.name
-        content.secondaryText = "\(taskList.tasks.count)"
-        cell.contentConfiguration = content
+        cell.configuration(with: taskList)
         return cell
     }
     
@@ -101,7 +106,6 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         
         editAction.backgroundColor = #colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1)
         doneAction.backgroundColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)
-        
         
         return UISwipeActionsConfiguration(actions: [doneAction, editAction ,delete])
     }

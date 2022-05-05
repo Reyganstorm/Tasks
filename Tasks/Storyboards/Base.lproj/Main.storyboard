@@ -22,6 +22,9 @@
                                     <segment title="Date"/>
                                     <segment title="A-Z"/>
                                 </segments>
+                                <connections>
+                                    <action selector="sortingLists:" destination="BYZ-38-t0r" eventType="valueChanged" id="0bh-6l-Fow"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="FVB-Mt-KWc">
                                 <rect key="frame" x="0.0" y="124" width="414" height="738"/>
