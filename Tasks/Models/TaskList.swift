@@ -20,5 +20,4 @@ class Task: Object {
     @Persisted var note = ""
     @Persisted var date = Date()
     @Persisted var isCompleted = false
-    
 }
